@@ -1,0 +1,121 @@
+<!-- Wappler include head-page="layouts/dashboard" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="desh_geral" appConnect="local" -->
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="deshboard" appConnect="local" -->
+<meta name="ac:route" content="/dashboard/desh_geral">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Sync - Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+
+<div class="">
+    <!-- Header -->
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-white mb-2">Dashboard</h2>
+        <p class="text-gray-400">Bem-vindo de volta, João! Aqui está o resumo das suas análises.</p>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="card p-6 rounded-lg border border-gray-700 cursor-pointer"><a href="/dashboard/nova_analise">
+                <div class="flex items-center justify-center h-32 bg-purple-900 bg-opacity-20 rounded-lg mb-4">
+
+                    <span class="text-4xl text-purple-400">+</span>
+                </div>
+            </a>
+
+            <h3 class="text-lg font-semibold text-white mb-2">Nova Análise</h3>
+            <p class="text-gray-400">Compare seu CV com uma vaga</p>
+        </div>
+        <div class="card p-6 rounded-lg border border-gray-700">
+            <h3 class="text-gray-400 text-sm mb-2">Total de Análises</h3>
+            <p class="text-2xl font-bold text-white">24</p>
+            <p class="text-green-400 text-sm mt-2">+12% esse mês</p>
+        </div>
+
+
+
+        <div class="card p-6 rounded-lg border border-gray-700">
+            <h3 class="text-gray-400 text-sm mb-2">Melhor Match</h3>
+            <p class="text-2xl font-bold text-white">92%</p>
+            <p class="text-gray-400 text-sm mt-2">Dev Full Stack Sr.</p>
+        </div>
+
+        <div class="card p-6 rounded-lg border border-gray-700">
+            <h3 class="text-gray-400 text-sm mb-2">Análises Restantes</h3>
+            <p class="text-2xl font-bold text-white">16</p>
+            <p class="text-gray-400 text-sm mt-2">Plano Pro</p>
+        </div>
+    </div>
+
+    <!-- Recent Analysis -->
+    <div class="bg-gray-800 rounded-lg p-6">
+        <h3 class="text-white mb-4">Análises Recentes</h3>
+        <div class="overflow-x-auto">
+            <table class="w-full">
+                <thead>
+                    <tr class="text-gray-400 text-left">
+                        <th class="pb-4">Data</th>
+                        <th class="pb-4">Vaga</th>
+                        <th class="pb-4">Empresa</th>
+                        <th class="pb-4">Match</th>
+                        <th class="pb-4">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-t border-gray-700">
+                        <td class="py-4 text-gray-300">12 Jan 2024</td>
+                        <td class="py-4 text-white">Desenvolvedor Full Stack</td>
+                        <td class="py-4 text-gray-300">Tech Company Inc.</td>
+                        <td class="py-4">
+                            <div class="flex items-center">
+                                <div class="w-full bg-gray-700 rounded-full h-2 mr-2">
+                                    <div class="bg-purple-600 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                                <span class="text-white">85%</span>
+                            </div>
+                        </td>
+                        <td class="py-4">
+                            <span class="px-3 py-1 rounded-full text-xs bg-green-900 text-green-300">Candidatura Enviada</span>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-gray-700">
+                        <td class="py-4 text-gray-300">10 Jan 2024</td>
+                        <td class="py-4 text-white">UX Designer Senior</td>
+                        <td class="py-4 text-gray-300">Creative Agency</td>
+                        <td class="py-4">
+                            <div class="flex items-center">
+                                <div class="w-full bg-gray-700 rounded-full h-2 mr-2">
+                                    <div class="bg-purple-600 h-2 rounded-full" style="width: 72%"></div>
+                                </div>
+                                <span class="text-white">72%</span>
+                            </div>
+                        </td>
+                        <td class="py-4">
+                            <span class="px-3 py-1 rounded-full text-xs bg-yellow-900 text-yellow-300">Em Análise</span>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-gray-700">
+                        <td class="py-4 text-gray-300">8 Jan 2024</td>
+                        <td class="py-4 text-white">Product Manager</td>
+                        <td class="py-4 text-gray-300">Startup XYZ</td>
+                        <td class="py-4">
+                            <div class="flex items-center">
+                                <div class="w-full bg-gray-700 rounded-full h-2 mr-2">
+                                    <div class="bg-purple-600 h-2 rounded-full" style="width: 92%"></div>
+                                </div>
+                                <span class="text-white">92%</span>
+                            </div>
+                        </td>
+                        <td class="py-4">
+                            <span class="px-3 py-1 rounded-full text-xs bg-blue-900 text-blue-300">Entrevista Marcada</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

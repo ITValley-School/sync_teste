@@ -1,0 +1,17 @@
+{
+  "name": "itv_database",
+  "module": "dbconnector",
+  "action": "connect",
+  "options": {
+    "client": "mssql",
+    "connection": {
+      "host": "srvmasterclass.database.windows.net",
+      "user": "adminitvalley",
+      "password": "Itvalley01",
+      "database": "dbmasterclasse",
+      "encrypt": true
+    }
+  },
+  "serverType": "node",
+  "fileName": "itv_database.json"
+}

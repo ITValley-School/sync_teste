@@ -1,0 +1,10 @@
+{
+  "cadastro.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "login_user.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  }
+}

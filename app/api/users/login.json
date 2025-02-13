@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "$_POST": [
+      {
+        "type": "text",
+        "name": "email"
+      },
+      {
+        "type": "text",
+        "name": "senha"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "identity",
+      "module": "auth",
+      "action": "login",
+      "options": {
+        "provider": "auth",
+        "username": "{{$_POST.email.lowercase()}}",
+        "password": "{{$_POST.senha.sha1()}}",
+        "remember": 1
+      },
+      "output": true,
+      "meta": []
+    }
+  }
+}

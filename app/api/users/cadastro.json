@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "$_POST": [
+      {
+        "type": "text",
+        "name": "nome"
+      },
+      {
+        "type": "text",
+        "name": "email"
+      },
+      {
+        "type": "text",
+        "name": "senha"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "insert_user",
+      "module": "dbupdater",
+      "action": "insert",
+      "options": {
+        "connection": "itv_database",
+        "sql": {
+          "type": "insert",
+          "values": [
+            {
+              "table": "skiil.usuarios",
+              "column": "nome",
+              "type": "text",
+              "value": "{{$_POST.nome}}"
+            },
+            {
+              "table": "skiil.usuarios",
+              "column": "email",
+              "type": "text",
+              "value": "{{$_POST.email.lowercase()}}"
+            },
+            {
+              "table": "skiil.usuarios",
+              "column": "senha",
+              "type": "text",
+              "value": "{{$_POST.senha.sha1()}}"
+            }
+          ],
+          "table": "skiil.usuarios",
+          "returning": "ID",
+          "query": "select top(0) [t].[ID] into #out from [skiil].[usuarios] as t left join [skiil].[usuarios] on 0=1;insert into [skiil].[usuarios] ([email], [nome], [senha]) output inserted.[ID] into #out values (@p0, @p1, @p2); select [ID] from #out; drop table #out;",
+          "params": [
+            {
+              "name": ":P1",
+              "type": "expression",
+              "value": "{{$_POST.nome}}",
+              "test": ""
+            },
+            {
+              "name": ":P2",
+              "type": "expression",
+              "value": "{{$_POST.email.lowercase()}}",
+              "test": ""
+            },
+            {
+              "name": ":P3",
+              "type": "expression",
+              "value": "{{$_POST.senha.sha1()}}",
+              "test": ""
+            }
+          ]
+        }
+      },
+      "meta": [
+        {
+          "name": "identity",
+          "type": "text"
+        },
+        {
+          "name": "affected",
+          "type": "number"
+        }
+      ]
+    }
+  }
+}

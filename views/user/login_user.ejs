@@ -1,0 +1,108 @@
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" is="dmx-app" id="login_user" appConnect="local" bootstrap5="custom" -->
+<meta name="ac:route" content="/user/login_user">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Sync - Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/login_user.css">
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-6xl flex rounded-xl overflow-hidden shadow-2xl animate-fade-in">
+        <!-- Lado Esquerdo - Visual -->
+        <div class="hidden md:flex md:w-1/2 bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900 p-12 flex-col justify-between relative">
+            <div class="relative z-10 text-center">
+                <h2 class="text-4xl font-bold text-white mb-6">Bem-vindo de volta!</h2>
+                <p class="text-purple-200 text-lg mb-12">Continue sua jornada de sucesso com o Skill Sync</p>
+
+                <div class="floating-cards">
+                    <div class="floating-card" style="top: 0; left: 10%; animation-delay: 0s;">
+                        <i class="fas fa-briefcase text-purple-300 text-2xl mb-3"></i>
+                        <h3 class="text-white font-semibold mb-2">Vagas em Alta</h3>
+                        <p class="text-purple-200 text-sm">+500 novas vagas esta semana</p>
+                    </div>
+
+                    <div class="floating-card" style="top: 40%; right: 10%; animation-delay: 2s;">
+                        <i class="fas fa-chart-pie text-purple-300 text-2xl mb-3"></i>
+                        <h3 class="text-white font-semibold mb-2">Match Rate</h3>
+                        <p class="text-purple-200 text-sm">95% de precisão nos matches</p>
+                    </div>
+
+                    <div class="floating-card" style="bottom: 0; left: 25%; animation-delay: 4s;">
+                        <i class="fas fa-users text-purple-300 text-2xl mb-3"></i>
+                        <h3 class="text-white font-semibold mb-2">Comunidade</h3>
+                        <p class="text-purple-200 text-sm">+10k profissionais conectados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lado Direito - Login -->
+        <div class="w-full md:w-1/2 bg-gray-800 p-8 md:p-12">
+            <div class="max-w-md mx-auto">
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl font-bold text-white mb-2">Login</h1>
+                    <p class="text-gray-400">Acesse sua conta no Skill Sync</p>
+                </div>
+
+                <div class="flex gap-4 mb-8">
+                    <button class="flex-1 py-3 px-4 rounded-lg bg-gray-700 hover:bg-gray-600 text-white font-medium transition-all social-btn">
+                        <i class="fab fa-google mr-2"></i> Google
+                    </button>
+                    <button class="flex-1 py-3 px-4 rounded-lg bg-gray-700 hover:bg-gray-600 text-white font-medium transition-all social-btn">
+                        <i class="fab fa-github mr-2"></i> GitHub
+                    </button>
+                    <button class="flex-1 py-3 px-4 rounded-lg bg-gray-700 hover:bg-gray-600 text-white font-medium transition-all social-btn">
+                        <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                    </button>
+                </div>
+
+                <div class="relative flex items-center gap-4 mb-8">
+                    <div class="flex-1 h-px bg-gray-700"></div>
+                    <span class="text-gray-400 text-sm">ou</span>
+                    <div class="flex-1 h-px bg-gray-700"></div>
+                </div>
+
+                <form class="space-y-4" is="dmx-serverconnect-form" method="post" id="sc_form_login" action="/api/users/login">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Email</label>
+                        <div class="relative">
+                            <i class="fas fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            <input type="email" class="w-full pl-11 pr-4 py-3 rounded-lg input-field text-white focus:outline-none" required="" name="email" id="inp_email">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Senha</label>
+                        <div class="relative">
+                            <i class="fas fa-lock absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            <input type="password" class="w-full pl-11 pr-4 py-3 rounded-lg input-field text-white focus:outline-none" required="" id="inp_senha" name="senha">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="remember" class="rounded text-purple-600 focus:ring-purple-500" name="lembrar">
+                            <label for="remember" class="ml-2 text-sm text-gray-400">Lembrar-me</label>
+                        </div>
+                        <a href="#" class="text-sm text-purple-400 hover:text-purple-300">Esqueceu a senha?</a>
+                    </div>
+
+                    <button type="submit" class="w-full py-3 rounded-lg bg-gradient-to-r from-purple-600 to-purple-800 text-white font-medium hover:opacity-90 transition-opacity gradient-border">
+                        Entrar
+                    </button>
+                </form>
+
+                <div class="mt-6 text-center">
+                    <p class="text-gray-400">
+                        Ainda não tem uma conta?
+                        <a href="/user/cadastro" class="text-purple-400 hover:text-purple-300 transition-colors">Cadastre-se</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

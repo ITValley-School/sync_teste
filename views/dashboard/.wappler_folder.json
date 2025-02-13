@@ -1,0 +1,18 @@
+{
+  "deshboard_geral.ejs": {
+    "layoutPage": "dashboard",
+    "description": ""
+  },
+  "desh_geral.ejs": {
+    "layoutPage": "dashboard",
+    "description": ""
+  },
+  "nova_analise.ejs": {
+    "layoutPage": "dashboard",
+    "description": ""
+  },
+  "historico.ejs": {
+    "layoutPage": "dashboard",
+    "description": ""
+  }
+}

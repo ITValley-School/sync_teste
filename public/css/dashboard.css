@@ -1,0 +1,64 @@
+:root {
+      --primary: #9333EA;
+      --primary-dark: #7928CA;
+      --background: #0F172A;
+      --surface: #1E293B;
+    }
+
+    body {
+      background-color: var(--background);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .sidebar {
+      background-color: var(--surface);
+      width: 250px;
+    }
+
+    .animate-fade-in {
+      -webkit-animation: fadeIn 0.5s ease-in;
+              animation: fadeIn 0.5s ease-in;
+    }
+
+    .card {
+      background: var(--surface);
+      -webkit-transition: -webkit-transform 0.3s ease;
+      transition: -webkit-transform 0.3s ease;
+      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+    }
+
+    .card:hover {
+      -webkit-transform: translateY(-4px);
+              transform: translateY(-4px);
+    }
+
+    .gradient-border {
+      position: relative;
+      border-radius: 0.5rem;
+    }
+
+    .gradient-border::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #9333EA, #7928CA);
+      border-radius: 0.6rem;
+      z-index: -1;
+      opacity: 0;
+      -webkit-transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease;
+    }
+
+    .gradient-border:hover::before {
+      opacity: 1;
+    }
+
+    .chart-container {
+      background: var(--surface);
+      border-radius: 0.5rem;
+      padding: 1rem;
+    }

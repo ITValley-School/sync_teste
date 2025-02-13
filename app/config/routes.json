@@ -1,0 +1,40 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "page": "index",
+      "routeType": "page",
+      "layout": "main"
+    },
+    {
+      "path": "/user/cadastro",
+      "page": "user/cadastro",
+      "layout": "main"
+    },
+    {
+      "path": "/user/login_user",
+      "page": "user/login_user",
+      "layout": "main"
+    },
+    {
+      "path": "/deshboard",
+      "page": "deshboard",
+      "layout": "dashboard"
+    },
+    {
+      "path": "/dashboard/desh_geral",
+      "page": "dashboard/desh_geral",
+      "layout": "dashboard"
+    },
+    {
+      "path": "/dashboard/nova_analise",
+      "page": "dashboard/nova_analise",
+      "layout": "dashboard"
+    },
+    {
+      "path": "/dashboard/historico",
+      "page": "dashboard/historico",
+      "layout": "dashboard"
+    }
+  ]
+}
